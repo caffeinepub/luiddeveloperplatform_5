@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit[wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono[wght].woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* LuidCorporation Dark Theme - Electric Blue / Deep Navy */
+    --background: 0.10 0.015 265;
+    --foreground: 0.95 0.010 265;
+    --card: 0.14 0.018 265;
+    --card-foreground: 0.95 0.010 265;
+    --popover: 0.14 0.018 265;
+    --popover-foreground: 0.95 0.010 265;
+    --primary: 0.65 0.22 260;
+    --primary-foreground: 0.10 0.015 265;
+    --secondary: 0.18 0.020 265;
+    --secondary-foreground: 0.90 0.010 265;
+    --muted: 0.18 0.020 265;
+    --muted-foreground: 0.60 0.02 265;
+    --accent: 0.70 0.18 195;
+    --accent-foreground: 0.10 0.015 265;
+    --destructive: 0.62 0.24 15;
+    --destructive-foreground: 0.98 0.01 0;
+    --border: 1 0 0 / 8%;
+    --input: 1 0 0 / 10%;
+    --ring: 0.65 0.22 260;
+    --chart-1: 0.65 0.22 260;
+    --chart-2: 0.70 0.18 195;
+    --chart-3: 0.72 0.20 300;
+    --chart-4: 0.68 0.19 140;
+    --chart-5: 0.75 0.18 50;
+    --sidebar: 0.12 0.018 265;
+    --sidebar-foreground: 0.95 0.010 265;
+    --sidebar-primary: 0.65 0.22 260;
+    --sidebar-primary-foreground: 0.10 0.015 265;
+    --sidebar-accent: 0.18 0.020 265;
+    --sidebar-accent-foreground: 0.90 0.010 265;
+    --sidebar-border: 1 0 0 / 8%;
+    --sidebar-ring: 0.65 0.22 260;
+  }
+
+  .dark {
+    --background: 0.10 0.015 265;
+    --foreground: 0.95 0.010 265;
+    --card: 0.14 0.018 265;
+    --card-foreground: 0.95 0.010 265;
+    --popover: 0.14 0.018 265;
+    --popover-foreground: 0.95 0.010 265;
+    --primary: 0.65 0.22 260;
+    --primary-foreground: 0.10 0.015 265;
+    --secondary: 0.18 0.020 265;
+    --secondary-foreground: 0.90 0.010 265;
+    --muted: 0.18 0.020 265;
+    --muted-foreground: 0.60 0.02 265;
+    --accent: 0.70 0.18 195;
+    --accent-foreground: 0.10 0.015 265;
+    --destructive: 0.62 0.24 15;
+    --destructive-foreground: 0.98 0.01 0;
+    --border: 1 0 0 / 8%;
+    --input: 1 0 0 / 10%;
+    --ring: 0.65 0.22 260;
+    --chart-1: 0.65 0.22 260;
+    --chart-2: 0.70 0.18 195;
+    --chart-3: 0.72 0.20 300;
+    --chart-4: 0.68 0.19 140;
+    --chart-5: 0.75 0.18 50;
+    --sidebar: 0.12 0.018 265;
+    --sidebar-foreground: 0.95 0.010 265;
+    --sidebar-primary: 0.65 0.22 260;
+    --sidebar-primary-foreground: 0.10 0.015 265;
+    --sidebar-accent: 0.18 0.020 265;
+    --sidebar-accent-foreground: 0.90 0.010 265;
+    --sidebar-border: 1 0 0 / 8%;
+    --sidebar-ring: 0.65 0.22 260;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .font-mono {
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .glass-card {
+    background: oklch(0.14 0.018 265 / 80%);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(1 0 0 / 8%);
+  }
+
+  .glass-card-hover {
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .glass-card-hover:hover {
+    border-color: oklch(0.65 0.22 260 / 30%);
+    background: oklch(0.16 0.020 265 / 90%);
+    box-shadow: 0 0 30px oklch(0.65 0.22 260 / 10%);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, oklch(0.70 0.22 260), oklch(0.72 0.20 195));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 40px oklch(0.65 0.22 260 / 25%);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 40px oklch(0.70 0.18 195 / 25%);
+  }
+
+  .nav-blur {
+    background: oklch(0.10 0.015 265 / 90%);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid oklch(1 0 0 / 6%);
+  }
+
+  .hero-mesh {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, oklch(0.65 0.22 260 / 12%) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 70%, oklch(0.70 0.18 195 / 10%) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 80% at 50% 50%, oklch(0.10 0.015 265) 0%, oklch(0.08 0.012 265) 100%);
+  }
+
+  .badge-primary {
+    background: oklch(0.65 0.22 260 / 15%);
+    border: 1px solid oklch(0.65 0.22 260 / 40%);
+    color: oklch(0.75 0.18 260);
+  }
+
+  .badge-accent {
+    background: oklch(0.70 0.18 195 / 15%);
+    border: 1px solid oklch(0.70 0.18 195 / 40%);
+    color: oklch(0.78 0.16 195);
+  }
+
+  .badge-purple {
+    background: oklch(0.72 0.20 300 / 15%);
+    border: 1px solid oklch(0.72 0.20 300 / 40%);
+    color: oklch(0.78 0.18 300);
+  }
+
+  .badge-green {
+    background: oklch(0.68 0.19 140 / 15%);
+    border: 1px solid oklch(0.68 0.19 140 / 40%);
+    color: oklch(0.76 0.17 140);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.30 0.015 265) transparent;
+  }
+}
